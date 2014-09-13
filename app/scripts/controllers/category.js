@@ -12,6 +12,13 @@ angular.module('hungApp')
     var toFind = $routeParams.category,
     	category;
 
+    function selectWord(category) {
+    	var words = category.words,
+    		toUse = Math.floor(Math.random() * words.length);
+
+    	return words[toUse];
+    }
+
     $scope.category = undefined;
 
     for (var key in Categories) {
@@ -22,4 +29,6 @@ angular.module('hungApp')
     		break;
     	}
     }
+
+    $scope.word = selectWord($scope.category);
   }]);
