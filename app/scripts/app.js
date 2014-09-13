@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/menu.html',
         controller: 'MenuCtrl'
       })
+      .when('/category/:category', {
+        templateUrl: 'views/category.html',
+        controller: 'CategoryCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
