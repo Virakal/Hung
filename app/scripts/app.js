@@ -20,14 +20,34 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/splash.html',
+        controller: 'SplashCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/menu', {
+        templateUrl: 'views/menu.html',
+        controller: 'MenuCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .factory('Categories', [function () {
+    return [
+      {
+        name: 'Test Category',
+        slug: 'test-category',
+        words: [
+          'Byron',
+          'Black'
+        ]
+      },
+      {
+        name: 'Test Category 2',
+        slug: 'test-category-2',
+        words: [
+          'Yarp',
+          'Narp'
+        ]
+      },
+    ];
+  }]);

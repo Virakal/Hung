@@ -8,7 +8,7 @@
  * Controller of the hungApp
  */
 angular.module('hungApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('SplashCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
