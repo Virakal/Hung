@@ -2,23 +2,12 @@
 
 <p>Misses: <span ng-bind="misses"></span></p>
 
-<div class="well">
-	<table>
-		<tr>
-			<td ng-repeat="letter in splitWord">
-				<h3 ng-bind="letter.revealed ? letter.letter : '-'"></h3>
-			</td>
-		</tr>
-	</table>
+<div class="well word">
+	<div class="letter" ng-repeat="letter in splitWord">
+		<span ng-bind="letter.revealed ? letter.letter : '-'"></span>
+	</div>
 </div>
 
 <span ng-repeat="letter in keyboard">
 	<a ng-click="reveal(letter)" ng-bind="letter"></a>
 </span>
-
-Debug
-<pre ng-bind="category | json"></pre>
-<pre ng-bind="word | json"></pre>
-<pre ng-bind="splitWord | json"></pre>
-<pre ng-bind="guessed | json"></pre>
-<pre ng-bind="keyboard | json"></pre>
