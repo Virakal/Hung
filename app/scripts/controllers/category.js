@@ -31,4 +31,35 @@ angular.module('hungApp')
     }
 
     $scope.word = selectWord($scope.category);
+    $scope.guessed = [];
+    $scope.misses = 0;
+
+    $scope.splitWord = $scope.word.split('').map(function (letter) {
+    	return {
+    		letter: letter.toUpperCase(),
+    		revealed: false
+    	};
+    });
+
+    $scope.reveal = function (letter) {
+        var found = 0,
+            split = $scope.splitWord;
+        letter = letter.toUpperCase();
+
+        for (var key in split) {
+            if (letter === split[key].letter) {
+                found++;
+
+                split[key].revealed = true;
+            }
+        }
+
+        if (!found) {
+            $scope.misses++;
+        }
+
+        return !!found;
+    };
+
+    $scope.keyboard = ('QWERTYUIOP' + 'ASDFGHJKL' + 'ZXCVBNM').split('');
   }]);
