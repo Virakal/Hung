@@ -61,6 +61,18 @@ angular.module('hungApp')
         return !!found;
     };
 
+    $scope.handleKeypress = function ($event) {
+        var keyCode = $event.keyCode;
+
+        if (keyCode > 64 && keyCode <= 90) {
+            $scope.reveal($event.key);
+        }
+    };
+
+    $scope.autofocus = function () {
+        $('.hidden-keyboard').trigger('focus').trigger('click');
+    };
+
     $scope.keyboard = [
         'QWERTYUIOP',
         'ASDFGHJKL',

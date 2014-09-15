@@ -8,6 +8,8 @@
 	</div>
 </div>
 
+<input class="hidden-keyboard hidden-sm" type="text" ng-init="autofocus()" ng-keydown="handleKeypress($event)">
+
 <div class="keyboard">
 	<div class="kb-row" ng-repeat="row in keyboard">
 		<span class="key" ng-repeat="letter in row" ng-click="reveal(letter)" ng-bind="letter"></span>
