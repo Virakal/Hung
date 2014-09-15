@@ -61,5 +61,11 @@ angular.module('hungApp')
         return !!found;
     };
 
-    $scope.keyboard = ('QWERTYUIOP' + 'ASDFGHJKL' + 'ZXCVBNM').split('');
+    $scope.keyboard = [
+        'QWERTYUIOP',
+        'ASDFGHJKL',
+        'ZXCVBNM'
+    ].map(function (row) {
+        return row.split('');
+    });
   }]);

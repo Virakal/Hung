@@ -8,6 +8,8 @@
 	</div>
 </div>
 
-<span ng-repeat="letter in keyboard">
-	<a ng-click="reveal(letter)" ng-bind="letter"></a>
-</span>
+<div class="keyboard">
+	<div class="kb-row" ng-repeat="row in keyboard">
+		<span class="key" ng-repeat="letter in row" ng-click="reveal(letter)" ng-bind="letter"></span>
+	</div>
+</div>

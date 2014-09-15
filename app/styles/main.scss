@@ -108,3 +108,15 @@ body {
 .word {
   text-align: center;
 }
+
+.keyboard {
+  text-align: center;
+
+  .key {
+    @extend .letter;
+
+    font-size: 45px;
+    margin: 4px;
+    width: 60px;
+  }
+}
